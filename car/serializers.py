@@ -8,7 +8,14 @@ class CarSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
+class CarSerializerUpdate(serializers.ModelSerializer):
+    class Meta:
+        model = Car
+        fields = ['id', 'brand', 'model', 'year', 'price']
+
+
 class CarSerializerDelete(serializers.ModelSerializer):
     class Meta:
         model = Car
-        fields = ['id']
+        # fields = ['id', 'brand']
+        fields = '__all__'
